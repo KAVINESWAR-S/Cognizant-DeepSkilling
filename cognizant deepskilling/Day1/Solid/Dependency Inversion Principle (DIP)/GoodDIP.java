@@ -1,42 +1,46 @@
-interface Keyboard {
-    void type();
+interface MessageService {
+    void send();
 }
 
-class StandardKeyboard implements Keyboard {
-    @Override
-    public void type() {
-        System.out.println("Typing with standard keyboard...");
+class Whatsapp implements MessageService {
+    public void send() {
+        System.out.println("Message sent on WhatsApp");
     }
 }
 
-class MechanicalKeyboard implements Keyboard {
-    @Override
-    public void type() {
-        System.out.println("Typing with mechanical keyboard...");
+class Email implements MessageService {
+    public void send() {
+        System.out.println("Message sent on Email");
     }
 }
 
-class Windows98Machine {
-    private Keyboard keyboard;
+class Sms implements MessageService {
+    public void send() {
+        System.out.println("Message sent on SMS");
+    }
+}
 
-    public Windows98Machine(Keyboard keyboard) {
-        this.keyboard = keyboard; // injected dependency
+class Service {
+
+    private MessageService service;
+
+    public Service(MessageService service) {
+        this.service = service;
     }
 
-    public void powerOn() {
-        System.out.println("Windows 98 booting...");
-        keyboard.type();
+    public void notifyUser() {
+        service.send();
     }
 }
 
 public class GoodDIP {
-    public static void main(String[] args) {
-        Keyboard kb1 = new StandardKeyboard();
-        Windows98Machine machine1 = new Windows98Machine(kb1);
-        machine1.powerOn();
 
-        Keyboard kb2 = new MechanicalKeyboard();
-        Windows98Machine machine2 = new Windows98Machine(kb2);
-        machine2.powerOn();
+    public static void main(String[] args) {
+
+        MessageService a = new Email();
+
+        Service b = new Service(a);
+
+        b.notifyUser();
     }
 }

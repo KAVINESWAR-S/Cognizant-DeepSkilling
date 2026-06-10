@@ -1,42 +1,54 @@
 package Exercise;
 
-interface DocumentsFactory{
-    void CreateDocument();
+interface Document{
+    void sent();
+}
 
-}
-class wordDocument implements DocumentsFactory{
-    public void CreateDocument(){
-        System.out.println("Creaded word Documents");
+class wordDocument implements Document{
+    public void sent(){
+        System.out.println("sent a word Document");
     }
 }
-class pdfDocument implements DocumentsFactory{
-    public void CreateDocument(){
-        System.out.println("Creaded pdf Documents");
+class PdfDocument implements Document{
+    public void sent(){
+        System.out.println("sent a pdf Document");
     }
 }
-class exelDocument implements DocumentsFactory{
-    public void CreateDocument(){
-        System.out.println("Creaded exel Documents");
+class ExclDocument implements Document{
+    public void sent(){
+        System.out.println("sent a excl Document");
     }
 }
-class DocumentsFactory2{
-    public abstract DocumentsFactory createDocument(){
-    }
-}
-class wordDocumentcreate extends DocumentsFactory2{
 
+abstract class Documentfactory{
+    public abstract Document create();
+}
+
+class createword extends Documentfactory{
+    public Document create(){
+        return new wordDocument();
+    }
+}
+class createpdf extends Documentfactory{
+    public Document create(){
+        return new PdfDocument();
+    }
+}
+class createexcl extends Documentfactory{
+    public Document create(){
+        return new ExclDocument();
+    }
 }
 public class FactoryMethodPatternExample {
-    public static void main(String[] args){
-         DocumentsFactory2 factory = new DocumentsFactory2();
 
-        DocumentsFactory doc1 = factory.getDocument("word");
-        doc1.CreateDocument();
 
-        DocumentsFactory doc2 = factory.getDocument("pdf");
-        doc2.CreateDocument();
+    public static void main(String[] args) {
 
-        DocumentsFactory doc3 = factory.getDocument("excel");
-        doc3.CreateDocument();
+        Documentfactory factory;
+
+        factory = new createword();
+        Document a = factory.create();
+        a.sent();
+
     }
 }
