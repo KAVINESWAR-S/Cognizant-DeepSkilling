@@ -1,0 +1,5 @@
+# Created at 2026-06-16T22:28:40.242
+Boot Manifest-JAR contains absolute paths in classpath 'E:\Learning\cognizanr\cognizant deepskilling\Day5\Mockito_Exercises\Mocking and Stubbing\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
