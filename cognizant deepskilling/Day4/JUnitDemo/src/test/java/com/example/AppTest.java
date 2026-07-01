@@ -17,7 +17,7 @@ public class AppTest {
     }
     @After
     public void setdown(){
-        System.out.println("end od excution");
+        System.out.println("end of excution");
         this.app=null;
     }
 
