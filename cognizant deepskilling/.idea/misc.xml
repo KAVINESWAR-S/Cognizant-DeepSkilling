@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Day4/JUnitDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/Day5/Mockito_Exercises/Mocking and Stubbing/pom.xml" />
+        <option value="$PROJECT_DIR$/Day6/SLF4J EXERCISE/pom.xml" />
+        <option value="$PROJECT_DIR$/Day7/LibraryManagement/pom.xml" />
+        <option value="$PROJECT_DIR$/Day8/Creating a Spring Boot Application/LibraryManagement/pom.xml" />
+        <option value="$PROJECT_DIR$/Day8/Creating and Configuring a Maven Project/teatAPP/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_25" default="true" project-jdk-name="25" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
