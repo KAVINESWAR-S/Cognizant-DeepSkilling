@@ -14,12 +14,9 @@ public class SpringLearnApplication {
 			LoggerFactory.getLogger(SpringLearnApplication.class);
 
 	public static void main(String[] args) {
-
-		// Start Spring Boot
 		SpringApplication.run(SpringLearnApplication.class, args);
 
-		// Load bean from XML
-		displayCountry();
+		//displayCountry();
 	}
 
 	public static void displayCountry() {
@@ -31,8 +28,6 @@ public class SpringLearnApplication {
 				context.getBean("country", Country.class);
 
 		LOGGER.debug("Country : {}", country);
-
-		// Close the XML context
 		((ClassPathXmlApplicationContext) context).close();
 	}
 }
