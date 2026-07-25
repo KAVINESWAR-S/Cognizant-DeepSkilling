@@ -1,0 +1,20 @@
+import React from "react";
+
+function CourseDetails(props) {
+
+  return (
+    <div>
+      <h1>Course Details</h1>
+
+      {props.courses.map((course) => (
+        <div key={course.id}>
+          <h1>{course.name}</h1>
+          <h4>{course.date}</h4>
+        </div>
+      ))}
+
+    </div>
+  );
+}
+
+export default CourseDetails;
